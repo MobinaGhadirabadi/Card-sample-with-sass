@@ -1,0 +1,44 @@
+%header-footer {
+    padding: $spacer-small $spacer-normal;
+    background-color: rgba(88, 177, 159,.110);
+}
+
+
+.card {
+    @include flex ;
+    flex-direction: column;
+    background-color: $white-color;
+    border: $card-border-width solid $card-border-color;
+    border-radius: $card-border-radius;
+    filter: drop-shadow(7px 0 7px rgba(59, 119, 107,.3));
+
+    
+    .card-header{
+       @extend %header-footer ;
+       @include border ("bottom" , $card-border-width solid $card-border-color);
+    }
+    .card-body{
+        padding: $spacer-normal;
+        .card-title {
+          font-size: $font-size-lg;
+          font-weight: $font-weight-bold;
+          margin-bottom: $spacer-small;
+        }
+
+    }
+    .card-footer {
+      @extend %header-footer ;
+      @include border ("top" , $card-border-width solid $card-border-color);
+      
+    }
+}
+
+.card:hover {
+  filter: drop-shadow(7px 0 7px rgba(59, 119, 107,.8)) ;
+  
+}
+
+
+
+
+
